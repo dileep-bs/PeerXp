@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+{% load crispy_forms_tags %}
+
+{% block start %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<center>
+<h2>All Tickets</h2><br><br>
+
+{%for tickets in alltickets%}
+	<ul><small>Ticket ID:   {{tickets.pk}}</small><br>
+		{{tickets.department}}<br>
+		{{tickets.category}}
+		<small>Rasied by: {{tickets.username}}</small><br>
+	--------------------------------------------------------------------
+	<br>
+	</ul>
+{%endfor%}
+</center>
+</body>
+</html>
+
+{% endblock start %}

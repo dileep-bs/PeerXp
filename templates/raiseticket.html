@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% load crispy_forms_tags %}
+
+{% block start %}
+<div class="model">
+	<form action="{% url 'raise_ticket' %}" enctype='multipart' method="POST">
+		<center><h2>New Ticket Form</h2>
+		{%csrf_token%}
+		<ui>{{form.as_p}}
+			<lable><b><h4>Email:</b></lable> {{user.email}}</h4></ul>
+		<input type="submit" name="submit"></center>
+	</form>
+</div>
+{% endblock start %}
